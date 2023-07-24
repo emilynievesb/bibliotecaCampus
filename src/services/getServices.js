@@ -3,6 +3,7 @@ import { Categoria } from "../entities/categoria.js";
 import { Editorial } from "../entities/editorial.js";
 import { Libro } from "../entities/libro.js";
 import { Prestamo } from "../entities/prestamo.js";
+import { Reserva } from "../entities/reserva.js";
 
 const obtenerTodosLosAutores = async () => {
   const autor = new Autor();
@@ -34,6 +35,11 @@ const obtenerPrestamos = async () => {
   return await prestamo.obtenerPrestamos();
 };
 
+const obtenerReservas = async () => {
+  const reserva = new Reserva();
+  return await reserva.obtenerReservas();
+};
+
 export {
   obtenerTodosLosAutores,
   obtenerCategoriasDisponibles,
@@ -41,4 +47,5 @@ export {
   obtenerEstadoLibro,
   obtenerLibros,
   obtenerPrestamos,
+  obtenerReservas,
 };
