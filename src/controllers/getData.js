@@ -4,6 +4,7 @@ import {
   obtenerEstadoLibro,
   obtenerLibros,
   obtenerLibrosDisponibles,
+  obtenerLibrosLargos,
   obtenerLibrosPorAutor,
   obtenerLibrosPorCategoria,
   obtenerPrestados,
@@ -134,6 +135,15 @@ const obtenerPrestamosPorUsuarioController = async (req, res, next) => {
   }
 };
 
+const obtenerLibrosLargosController = async (req, res, next) => {
+  try {
+    const result = await obtenerLibrosLargos();
+    res.status(200).json(result);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+};
+
 export {
   obtenerTodosLosAutoresController,
   obtenerCategoriasDisponiblesController,
@@ -148,4 +158,5 @@ export {
   obtenerLibrosPorAutorController,
   obtenerLibrosPorCategoriaController,
   obtenerPrestamosPorUsuarioController,
+  obtenerLibrosLargosController,
 };

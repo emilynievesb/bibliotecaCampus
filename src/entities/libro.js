@@ -79,5 +79,20 @@ class Libro {
       throw error;
     }
   }
+  async obtenerLibrosLargos() {
+    let sql = /*sql*/ `SELECT l.titulo AS titulo,  c.nombre AS categoria, a.nombre AS autor, e.nombre AS editorial,
+    l.num_paginas AS paginas
+    FROM libro l
+    INNER JOIN categoria c ON l.id_categoria = c.id_categoria
+    INNER JOIN autor a ON l.id_autor = a.id_autor
+    INNER JOIN editorial e ON l.id_editorial = e.id_editorial
+    WHERE l.num_paginas >= 500`;
+    try {
+      const result = await executeQuery(sql);
+      return result.data;
+    } catch (error) {
+      throw error;
+    }
+  }
 }
 export { Libro };
