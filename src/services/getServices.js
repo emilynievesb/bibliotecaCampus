@@ -62,6 +62,12 @@ const obtenerLibrosPorAutor = async (nombre) => {
   return await libro.obtenerLibrosPorAutor();
 };
 
+const obtenerLibrosPorCategoria = async (categoria) => {
+  const libro = new Libro();
+  libro.nombre_categoria = categoria;
+  return await libro.obtenerLibrosPorCategoria();
+};
+
 export {
   obtenerTodosLosAutores,
   obtenerCategoriasDisponibles,
@@ -74,4 +80,5 @@ export {
   obtenerPrestados,
   obtenerUsuarios,
   obtenerLibrosPorAutor,
+  obtenerLibrosPorCategoria,
 };
