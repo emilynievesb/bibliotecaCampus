@@ -68,6 +68,12 @@ const obtenerLibrosPorCategoria = async (categoria) => {
   return await libro.obtenerLibrosPorCategoria();
 };
 
+const obtenerPrestamosPorUsuario = async (nombre) => {
+  const prestamo = new Prestamo();
+  prestamo.nombre_usuario = nombre;
+  return await prestamo.obtenerPrestamosPorUsuario();
+};
+
 export {
   obtenerTodosLosAutores,
   obtenerCategoriasDisponibles,
@@ -81,4 +87,5 @@ export {
   obtenerUsuarios,
   obtenerLibrosPorAutor,
   obtenerLibrosPorCategoria,
+  obtenerPrestamosPorUsuario,
 };

@@ -9,6 +9,7 @@ import {
   obtenerLibrosPorCategoriaController,
   obtenerPrestadosController,
   obtenerPrestamosController,
+  obtenerPrestamosPorUsuarioController,
   obtenerReservasController,
   obtenerTodosLosAutoresController,
   obtenerUsuariosController,
@@ -28,6 +29,10 @@ const getInitRoute = () => {
   router.get("/obtenerUsuarios", obtenerUsuariosController);
   router.get("/obtenerLibrosPorAutor", obtenerLibrosPorAutorController);
   router.get("/obtenerLibrosPorCategoria", obtenerLibrosPorCategoriaController);
+  router.get(
+    "/obtenerPrestamosPorUsuario",
+    obtenerPrestamosPorUsuarioController
+  );
   return router;
 };
 
