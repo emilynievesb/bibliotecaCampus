@@ -5,6 +5,7 @@ import {
   obtenerEstadoLibroController,
   obtenerLibrosController,
   obtenerLibrosDisponiblesController,
+  obtenerLibrosJaponesController,
   obtenerLibrosLargosController,
   obtenerLibrosPorAutorController,
   obtenerLibrosPorCategoriaController,
@@ -40,6 +41,7 @@ const getInitRoute = () => {
     "/librosPrestadosPorUser",
     obtenerLibrosPrestadosPorUsuarioController
   );
+  router.get("/librosJaponeses", obtenerLibrosJaponesController);
   return router;
 };
 

@@ -85,6 +85,11 @@ const obtenerLibrosPrestadosPorUsuario = async (usuario) => {
   return await prestamo.obtenerLibrosPrestadosPorUsuario();
 };
 
+const obtenerLibrosJapones = async () => {
+  const libro = new Libro();
+  return await libro.obtenerLibrosJapones();
+};
+
 export {
   obtenerTodosLosAutores,
   obtenerCategoriasDisponibles,
@@ -101,4 +106,5 @@ export {
   obtenerPrestamosPorUsuario,
   obtenerLibrosLargos,
   obtenerLibrosPrestadosPorUsuario,
+  obtenerLibrosJapones,
 };
