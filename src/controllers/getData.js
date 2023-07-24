@@ -3,6 +3,7 @@ import {
   obtenerEditoriales,
   obtenerEstadoLibro,
   obtenerLibros,
+  obtenerPrestamos,
   obtenerTodosLosAutores,
 } from "../services/getServices.js";
 
@@ -51,10 +52,20 @@ const obtenerLibrosController = async (req, res, next) => {
   }
 };
 
+const obtenerPrestamosController = async (req, res, next) => {
+  try {
+    const result = await obtenerPrestamos();
+    res.status(200).json(result);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+};
+
 export {
   obtenerTodosLosAutoresController,
   obtenerCategoriasDisponiblesController,
   obtenerEstadoLibroController,
   obtenerEditorialesController,
   obtenerLibrosController,
+  obtenerPrestamosController,
 };

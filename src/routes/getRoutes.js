@@ -4,6 +4,7 @@ import {
   obtenerEditorialesController,
   obtenerEstadoLibroController,
   obtenerLibrosController,
+  obtenerPrestamosController,
   obtenerTodosLosAutoresController,
 } from "../controllers/getData.js";
 
@@ -14,6 +15,7 @@ const getInitRoute = () => {
   router.get("/obtenerEditoriales", obtenerEditorialesController);
   router.get("/estadoLibros", obtenerEstadoLibroController);
   router.get("/obtenerLibros", obtenerLibrosController);
+  router.get("/obtenerPrestamos", obtenerPrestamosController);
   return router;
 };
 
