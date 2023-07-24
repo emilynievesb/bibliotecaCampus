@@ -143,6 +143,15 @@ const obtenerLibrosLargosController = async (req, res, next) => {
     res.status(500).json(error);
   }
 };
+const obtenerLibrosPrestadosPorUsuarioController = async (req, res, next) => {
+  try {
+    const { usuario } = req.query;
+    const result = await obtenerPrestamosPorUsuario(usuario);
+    res.status(200).json(result);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+};
 
 export {
   obtenerTodosLosAutoresController,
@@ -159,4 +168,5 @@ export {
   obtenerLibrosPorCategoriaController,
   obtenerPrestamosPorUsuarioController,
   obtenerLibrosLargosController,
+  obtenerLibrosPrestadosPorUsuarioController,
 };

@@ -8,6 +8,7 @@ import {
   obtenerLibrosLargosController,
   obtenerLibrosPorAutorController,
   obtenerLibrosPorCategoriaController,
+  obtenerLibrosPrestadosPorUsuarioController,
   obtenerPrestadosController,
   obtenerPrestamosController,
   obtenerPrestamosPorUsuarioController,
@@ -35,6 +36,10 @@ const getInitRoute = () => {
     obtenerPrestamosPorUsuarioController
   );
   router.get("/obtenerLibrosExtensos", obtenerLibrosLargosController);
+  router.get(
+    "/librosPrestadosPorUser",
+    obtenerLibrosPrestadosPorUsuarioController
+  );
   return router;
 };
 

@@ -79,6 +79,12 @@ const obtenerLibrosLargos = async () => {
   return await libro.obtenerLibrosLargos();
 };
 
+const obtenerLibrosPrestadosPorUsuario = async (usuario) => {
+  const prestamo = new Prestamo();
+  prestamo.nombre_usuario = usuario;
+  return await prestamo.obtenerLibrosPrestadosPorUsuario();
+};
+
 export {
   obtenerTodosLosAutores,
   obtenerCategoriasDisponibles,
@@ -94,4 +100,5 @@ export {
   obtenerLibrosPorCategoria,
   obtenerPrestamosPorUsuario,
   obtenerLibrosLargos,
+  obtenerLibrosPrestadosPorUsuario,
 };
