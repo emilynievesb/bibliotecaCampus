@@ -18,6 +18,15 @@ class Usuario {
       throw error;
     }
   }
+  async obtenerUsuarios() {
+    let sql = /*sql*/ `SELECT nombre, apellido, email FROM usuario`;
+    try {
+      const result = await executeQuery(sql);
+      return result.data;
+    } catch (error) {
+      throw error;
+    }
+  }
 }
 
 export { Usuario };

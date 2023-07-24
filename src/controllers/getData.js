@@ -8,6 +8,7 @@ import {
   obtenerPrestamos,
   obtenerReservas,
   obtenerTodosLosAutores,
+  obtenerUsuarios,
 } from "../services/getServices.js";
 
 const obtenerTodosLosAutoresController = async (req, res, next) => {
@@ -91,6 +92,15 @@ const obtenerPrestadosController = async (req, res, next) => {
   }
 };
 
+const obtenerUsuariosController = async (req, res, next) => {
+  try {
+    const result = await obtenerUsuarios();
+    res.status(200).json(result);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+};
+
 export {
   obtenerTodosLosAutoresController,
   obtenerCategoriasDisponiblesController,
@@ -101,4 +111,5 @@ export {
   obtenerReservasController,
   obtenerLibrosDisponiblesController,
   obtenerPrestadosController,
+  obtenerUsuariosController,
 };

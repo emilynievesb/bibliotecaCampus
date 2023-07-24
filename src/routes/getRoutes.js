@@ -9,6 +9,7 @@ import {
   obtenerPrestamosController,
   obtenerReservasController,
   obtenerTodosLosAutoresController,
+  obtenerUsuariosController,
 } from "../controllers/getData.js";
 
 const getInitRoute = () => {
@@ -22,6 +23,7 @@ const getInitRoute = () => {
   router.get("/obtenerReservas", obtenerReservasController);
   router.get("/librosDisponibles", obtenerLibrosDisponiblesController);
   router.get("/obtenerLibrosPrestado", obtenerPrestadosController);
+  router.get("/obtenerUsuarios", obtenerUsuariosController);
   return router;
 };
 

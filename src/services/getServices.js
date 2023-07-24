@@ -4,6 +4,7 @@ import { Editorial } from "../entities/editorial.js";
 import { Libro } from "../entities/libro.js";
 import { Prestamo } from "../entities/prestamo.js";
 import { Reserva } from "../entities/reserva.js";
+import { Usuario } from "../entities/usuario.js";
 
 const obtenerTodosLosAutores = async () => {
   const autor = new Autor();
@@ -50,6 +51,11 @@ const obtenerPrestados = async () => {
   return await prestamo.obtenerPrestados();
 };
 
+const obtenerUsuarios = async () => {
+  const usuario = new Usuario();
+  return await usuario.obtenerUsuarios();
+};
+
 export {
   obtenerTodosLosAutores,
   obtenerCategoriasDisponibles,
@@ -60,4 +66,5 @@ export {
   obtenerReservas,
   obtenerLibrosDisponibles,
   obtenerPrestados,
+  obtenerUsuarios,
 };
