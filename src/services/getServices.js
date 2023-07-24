@@ -40,6 +40,11 @@ const obtenerReservas = async () => {
   return await reserva.obtenerReservas();
 };
 
+const obtenerLibrosDisponibles = async () => {
+  const libro = new Libro();
+  return await libro.obtenerLibrosDisponibles();
+};
+
 export {
   obtenerTodosLosAutores,
   obtenerCategoriasDisponibles,
@@ -48,4 +53,5 @@ export {
   obtenerLibros,
   obtenerPrestamos,
   obtenerReservas,
+  obtenerLibrosDisponibles,
 };
