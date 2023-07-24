@@ -1,5 +1,6 @@
 import {
   obtenerCategoriasDisponibles,
+  obtenerEditoriales,
   obtenerTodosLosAutores,
 } from "../services/getServices.js";
 
@@ -21,7 +22,17 @@ const obtenerCategoriasDisponiblesController = async (req, res, next) => {
   }
 };
 
+const obtenerEditorialesController = async (req, res, next) => {
+  try {
+    const result = await obtenerEditoriales();
+    res.status(200).json(result);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+};
+
 export {
   obtenerTodosLosAutoresController,
   obtenerCategoriasDisponiblesController,
+  obtenerEditorialesController,
 };
