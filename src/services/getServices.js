@@ -56,6 +56,12 @@ const obtenerUsuarios = async () => {
   return await usuario.obtenerUsuarios();
 };
 
+const obtenerLibrosPorAutor = async (nombre) => {
+  const libro = new Libro();
+  libro.nombre_autor = nombre;
+  return await libro.obtenerLibrosPorAutor();
+};
+
 export {
   obtenerTodosLosAutores,
   obtenerCategoriasDisponibles,
@@ -67,4 +73,5 @@ export {
   obtenerLibrosDisponibles,
   obtenerPrestados,
   obtenerUsuarios,
+  obtenerLibrosPorAutor,
 };

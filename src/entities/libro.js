@@ -10,6 +10,7 @@ class Libro {
   isbn;
   num_paginas;
   id_estado;
+  nombre_autor;
   constructor() {}
   async obtenerEstadoLibros() {
     let sql = /*sql*/ `SELECT l.titulo AS titulo, e.nombre AS estado, e.descripcion AS descripcion
@@ -42,6 +43,20 @@ class Libro {
     INNER JOIN autor a ON l.id_autor = a.id_autor
     INNER JOIN editorial e ON l.id_editorial = e.id_editorial
     WHERE l.id_estado = 1`;
+    try {
+      const result = await executeQuery(sql);
+      return result.data;
+    } catch (error) {
+      throw error;
+    }
+  }
+  async obtenerLibrosPorAutor() {
+    let sql = /*sql*/ `SELECT l.titulo AS titulo, c.nombre AS categoria, e.nombre AS editorial
+    FROM libro l
+    INNER JOIN categoria c ON l.id_categoria = c.id_categoria
+    INNER JOIN autor a ON l.id_autor = a.id_autor
+    INNER JOIN editorial e ON l.id_editorial = e.id_editorial
+    WHERE CONCAT(a.nombre,\" \",a.apellido) = \"${this.nombre_autor}\"`;
     try {
       const result = await executeQuery(sql);
       return result.data;
