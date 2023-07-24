@@ -22,5 +22,18 @@ class Libro {
       throw error;
     }
   }
+  async obtenerLibros() {
+    let sql = /*sql*/ `SELECT l.titulo, a.nombre AS autor, e.nombre AS editorial
+    FROM libro l
+    INNER JOIN autor a ON l.id_autor = a.id_autor
+    INNER JOIN editorial e ON l.id_editorial = e.id_editorial
+    `;
+    try {
+      const result = await executeQuery(sql);
+      return result.data;
+    } catch (error) {
+      throw error;
+    }
+  }
 }
 export { Libro };

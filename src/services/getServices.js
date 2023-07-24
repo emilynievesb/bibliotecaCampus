@@ -23,9 +23,15 @@ const obtenerEstadoLibro = async () => {
   return await libro.obtenerEstadoLibros();
 };
 
+const obtenerLibros = async () => {
+  const libro = new Libro();
+  return await libro.obtenerLibros();
+};
+
 export {
   obtenerTodosLosAutores,
   obtenerCategoriasDisponibles,
   obtenerEditoriales,
   obtenerEstadoLibro,
+  obtenerLibros,
 };
