@@ -2,12 +2,6 @@
 
 Este proyecto es una API de biblioteca para crear un registro y catálogo de libros. Asi como también la gestión de préstamos y reservas
 
-## Estructura base de datos
-
-Esta sería la estructura que tendría la base de datos para el proyecto.
-
-![Diagrama de entidad relación](./img/diagrama.png)
-
 ## Requisitos
 
 Antes de comenzar, asegúrate de tener instalado lo siguiente en tu máquina:
